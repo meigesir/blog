@@ -86,3 +86,5 @@ exclude_generator:
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: github
+  repo: https://github.com/meigesir/meigesir.github.io.git
+  branch: master
