@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: no pain no gain
-subtitle:
-description:
+title: luck
+subtitle: "Keep Happy Every Day"
+description: meigesir
 author: meigesir
 email: emomeild@gmail.com
-language: zh-TW
+language: zh-CN
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -82,9 +82,15 @@ disqus_shortname: meigesir
 theme: pacman
 exclude_generator:
 
+# plugin
+plugins:
+- hexo-generator-feed
+- hexo-generator-sitemap
+
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: github
   repo: https://github.com/meigesir/meigesir.github.io.git
   branch: master
+
