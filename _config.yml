@@ -9,10 +9,11 @@ description: meigesir
 author: meigesir
 email: emomeild@gmail.com
 language: zh-CN
+timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://meigesir.com
+url: http://meigesir.github.io
 root: /
 permalink: :year/:month/:day/:title/
 tag_dir: tags
@@ -24,6 +25,8 @@ permalink_defaults:
 # Directory
 source_dir: source
 public_dir: public
+i18n_dir: :lang
+skip_render:
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -34,9 +37,11 @@ filename_case: 0
 render_drafts: false
 post_asset_folder: false
 relative_link: false
+future: true
 highlight:
   enable: true
   line_number: true
+  auto_detect: true
   tab_replace:
 
 # Category & Tag
@@ -90,7 +95,6 @@ plugins:
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
-  type: github
+  type: git
   repo: https://github.com/meigesir/meigesir.github.io.git
   branch: master
-
