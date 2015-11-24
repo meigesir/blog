@@ -25,3 +25,13 @@ tags: [gather]
 * NSHipster：主要涉及IOS开发容易忽视的点: [中文版](http://nshipster.cn/)	[英文版](http://nshipster.com/)
 
 * objc：系统学习IOS开发的好地方: [中文版](http://objccn.io)	[英文版](http://www.objc.io/)
+
+## swift周订阅
+
+* [iOS Dev Weekly](https://iosdevweekly.com/)
+
+* [Swift Sandbox](http://swiftsandbox.io/)
+
+## tutorial
+
+* [AppCoda](http://www.appcoda.com/)
