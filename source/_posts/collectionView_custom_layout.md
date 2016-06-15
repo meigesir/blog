@@ -1,4 +1,4 @@
-title: collectionView 自定义 layout
+title: collectionView自定义layout
 date: 2016-06-06 14:13:54
 categories: collectionView
 tags: [layout]
@@ -87,7 +87,11 @@ layout处理前，有机会做一些初始化计算。
 
 ## 自定义layout几种实现([点击查看具体代码](https://github.com/meigesir/TTCollectionView.git))
 
+![自定义layout](https://github.com/meigesir/TTCollectionView/raw/master/Resources/home.gif)
+
 ### 1. 无限轮播
+
+![无限轮播](https://github.com/meigesir/TTCollectionView/raw/master/Resources/InfiniteCarouse.gif)
 
 优点，相比ScrollView,可以重用cell，优化性能
 
@@ -97,6 +101,8 @@ layout处理前，有机会做一些初始化计算。
 3. 以上可以达到轮播的目的，无限轮播实现方式，就是在第一张轮播视图的前面插入最后一张轮播，最后一张轮播视图的后面插入第一张轮播，这样在滑动到第一个或最后一个位置的时候，分别无动画的切换到原始数据的最后一张或第一张。再加入timer定时滚动。
 
 ### 2. 瀑布流（CHTCollectionViewWaterfallLayout）
+
+![瀑布流](https://github.com/meigesir/TTCollectionView/raw/master/Resources/WaterFall.gif)
 
 瀑布流比较有代表的是app是Pinterest。特点是，每个元素都是等宽不等高，而且每当排列一个元素的时候，都是从最短的那一列开始排。这里我就不重复造轮了，因为有一个比较好的开源项目(CHTCollectionViewWaterfallLayout，注释也很充分)。但是作者有一个地方有欠缺(CHTFloorCGFloat)，但是可以忽略不计。
 
@@ -110,6 +116,8 @@ layout处理前，有机会做一些初始化计算。
 
 ### 3. 弹性header
 
+![弹性header](https://github.com/meigesir/TTCollectionView/raw/master/Resources/StretchyHeader.gif)
+
 下拉collectionView的时候，header可以被拉伸，从而可以更全面地查看图片更多细节，手势松开，又可以反弹到初始状态。
 
 #### 实现
@@ -120,6 +128,8 @@ layout处理前，有机会做一些初始化计算。
 
 ### 4. 水平滚动放大
 
+![水平滚动放大](https://github.com/meigesir/TTCollectionView/raw/master/Resources/SlideZoomIn.gif)
+
 水平滚动cell，当到屏幕中间的时候，放到最大，并会自动校正位置
 
 #### 实现
@@ -127,7 +137,9 @@ layout处理前，有机会做一些初始化计算。
 1. 展示时，layoutAttributesForElementsInRect:，设置每个item的Attributes，通过item中心点x和collectionView屏幕中心点的x值的间距来设置item的缩放
 2. 校正位置：重写targetContentOffsetForProposedContentOffset:withScrollingVelocity:，在item不在中心位置的时候自动居中
 
-### 5. 拖动item
+### 5. 拖动排序item
+
+![拖动排序item](https://github.com/meigesir/TTCollectionView/raw/master/Resources/ReOrder.gif)
 
 手动长按item的时候，item稍微放大一些，提示用户当前可以做出拖动操作。然后移动item，可以将item任意的移动位置。iOS9已经有相应的API支持，而且比较简单，这里为了兼容iOS7以上，所以需要自定义layout。由于也有相应的轮子LXReorderableCollectionViewFlowLayout，这里就不重新造轮子了，局限是不适用于自定义layout。
 
