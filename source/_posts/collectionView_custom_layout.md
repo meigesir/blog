@@ -16,8 +16,7 @@ UICollectionView是一种新的数据展示方式，简单来说可以把他理�
 
 首先回顾一下Collection View的构成，我们能看到的有三个部分：
 
-* Cells  用于展示内容的主体，对于不同的cell可以指定不同尺寸和不同的内容
-Supplementary Views 追加视图 （类似UITableView Header或者Footer）
+* Cells 用于展示内容的主体，对于不同的cell可以指定不同尺寸和不同的内容
 * Supplementary Views 追加视图 （类似UITableView Header或者Footer，但是只发挥了10%的功力）
 * Decoration Views 装饰视图 （用作背景展示）
 
@@ -26,11 +25,11 @@ Supplementary Views 追加视图 （类似UITableView Header或者Footer）
 
 ### 关于Cell
 
-DK提供给我们的默认的UICollectionViewCell结构上相对比较简单，由下至上：
+SDK提供给我们的默认的UICollectionViewCell结构上相对比较简单，由下至上：
 
 - 首先是cell本身作为容器view
 - 然后是一个大小自动适应整个cell的backgroundView，用作cell平时的背景
-- 再其上是selectedBackgroundView，是cell被选中时的背景
+- 在其上是selectedBackgroundView，是cell被选中时的背景
 - 最后是一个contentView，自定义内容应被加在这个view上
 
 ### UICollectionViewLayout
@@ -53,7 +52,7 @@ DK提供给我们的默认的UICollectionViewCell结构上相对比较简单，�
 
 ### 自定义layout
 
-#### 继承UICollectionViewWaterfallLayout
+#### 继承UICollectionViewLayout
 
 ##### 理解layout的处理过程
 
@@ -146,7 +145,7 @@ layout处理前，有机会做一些初始化计算。
 ### 实现
 
 1. 添加长按手势，有可能手势冲突，比如iOS9添加长按手势实现移动元素，所以需要设置我们自定义长按手势优先级高(requireGestureRecognizerToFail:)。
-2. 长按手势开始时，基于原有item的frame创建view，添加正常、高亮时的截图，然后放到view到1.1呗；长按手势结束时，view缩放到正常大小，然后view设置nil，拖动结束；两次相应的委托调用。
+2. 长按手势开始时，基于原有item的frame创建view，添加正常、高亮时的截图，然后放大view到1.1倍；长按手势结束时，view缩放到正常大小，然后view设置nil，拖动结束；两次相应的委托调用。
 3. 拖动需要添加pan手势，拖动改变时，改变view的中心点即可。
 4. 在layoutAttributesForElementsInRect:中，判断如果是当前操作的item，Attributes的hidden设为YES，从而隐藏原有的item。
 5. invalidateLayoutIfNecessary，实现没有操作在item上面时不生效，及其相应的删除、插入操作，及其相应的委托方法。
